@@ -1,16 +1,30 @@
 import React, { useContext, useState } from "react";
 import Store from "../context";
+import styled from "styled-components";
+// import bg from "./bg.png"
 
-const AddTodo = () => {
+const Wrapper = styled.section`
+  padding: 4em;
+  // background: rgb(0, 169, 255)  ;
+  background-image: url("./download.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+`;
+
+const AddTodo = (props) => {
 
   const { dispatch } = useContext(Store);
 
   // Creating a local state to have currently writing
   // todo item that will be sent to the global store.
   const [todo, setTodo] = useState("");
+  const [test, setTest] = useState("");
 
   function handleTodoChange(e) {
     setTodo(e.target.value)
+    setTest(e.target.value)
+    console.log(test)
   }
 
   function handleTodoAdd() {
@@ -23,7 +37,9 @@ const AddTodo = () => {
   }
 
   return (
-    <div className="row">
+    <Wrapper style={props.style}>
+
+    <div className="row" >
       <div className="col-md-12">
         <br />
         <div className="input-group">
@@ -43,6 +59,9 @@ const AddTodo = () => {
         </div>
       </div>
     </div>
+
+    </Wrapper>
+
   );
 }
 

@@ -11,6 +11,8 @@ import { usePersistedContext, usePersistedReducer } from "./localStorage";
 import List from "./components/List";
 import AddTodo from "./components/AddTodo";
 
+
+
 function App() {
   // create a global store to store the state
   const globalStore = usePersistedContext(useContext(Store), "state");
@@ -20,12 +22,13 @@ function App() {
     useReducer(reducer, globalStore),
     "state" // The localStorage key
   );
+  let style = {filter: `invert(${~~state.invert}`}
 
   return (
     // State.Provider passes the state and dispatcher to the down
-    <Store.Provider value={{ state, dispatch }}>
-      <AddTodo />
-      <List />
+    <Store.Provider  value={{ state, dispatch }}>
+      <AddTodo style={style} />
+      <List style={style}  />
     </Store.Provider>
   );
 }

@@ -5,10 +5,10 @@ import React from "react";
 const Store = React.createContext({
   todos: [
     // Initial Data
-    "Get Beer",
-    "Drink Beer",
+    "Get Lunch",
+    "Walk Dog",
     "Sleep",
-    "Go to work"
+    "Code. Code. Code... "
   ]
 });
 

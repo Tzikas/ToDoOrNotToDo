@@ -17,8 +17,15 @@ export default function reducer(state, action) {
       return {
         ...state,
         todos: state.todos.filter(t => t !== action.payload)
-      };
+      }
+    case "INVERT":
+      //console.log({ type:'lunch time'})
+      return {
+        ...state,
+        invert: !state.invert
+      }
+  
     default:
-      return state;
-  }
+  return state;
+}
 }
