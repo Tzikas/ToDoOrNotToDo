@@ -29,6 +29,11 @@ export default function List(props) {
         </Header>
       );
 
+  const moveBG = (e) => {
+    console.log(e.pageX, e.pageY)
+    dispatch({type:"MOVE", payload: {x:e.pageX, y:e.pageY}})
+  }
+
   const showTodos = () => {
     return state.todos.map(t => (
       <li key={t} className={`list-group-item`}  onClick={() => dispatch({ type: "COMPLETE", payload: t })}>
@@ -43,7 +48,7 @@ export default function List(props) {
   }
 
   return (
-    <div className="row" style={props.style}>
+    <div className="row box" style={props.style} onMouseMove={moveBG} >
       <div className="col-md-12">
         <div className="row">
           <div className="col-md-12" onMouseOver={(e) => getColor(this,e)}>

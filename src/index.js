@@ -23,11 +23,11 @@ function App() {
     "state" // The localStorage key
   );
   let style = {filter: `invert(${~~state.invert}`}
-
+  let coords = state.coords || {x:0,y:0};
   return (
     // State.Provider passes the state and dispatcher to the down
     <Store.Provider  value={{ state, dispatch }}>
-      <AddTodo style={style} />
+      <AddTodo style={style} coords={coords} />
       <List style={style}  />
     </Store.Provider>
   );

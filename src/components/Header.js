@@ -11,7 +11,7 @@ const Title = styled.h5`
 export const Header = (props) => (
   <div className="row">
     <div className="col-md-8">
-     <Title><h5>To do</h5></Title> 
+     <Title>To do</Title> 
     </div>
     <div className="col-md-4">
        {props.children}

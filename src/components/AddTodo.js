@@ -3,16 +3,19 @@ import Store from "../context";
 import styled from "styled-components";
 // import bg from "./bg.png"
 
-const Wrapper = styled.section`
-  padding: 4em;
-  // background: rgb(0, 169, 255)  ;
-  background-image: url("./download.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-`;
 
 const AddTodo = (props) => {
+  const Wrapper = styled.section`
+  padding: 4em;
+  fitler:invert;
+  background-image: url("./download.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  &:before {
+
+  }
+`;
 
   const { dispatch } = useContext(Store);
 
@@ -38,27 +41,26 @@ const AddTodo = (props) => {
 
   return (
     <Wrapper style={props.style}>
-
-    <div className="row" >
-      <div className="col-md-12">
-        <br />
-        <div className="input-group">
-          <input
-            className="form-control"
-            value={todo}
-            autoFocus={true}
-            placeholder="Enter new todo"
-            onKeyUp={handleSubmitForm}
-            onChange={handleTodoChange}
-          />
-          <div className="input-group-append">
-            <button className="btn btn-primary" onClick={handleTodoAdd}>
-              <i className="fas fa-plus-circle"></i>
-            </button>
+      <div className="row" >
+        <div className="col-md-12">
+          <br />
+          <div className="input-group">
+            <input
+              className="form-control"
+              value={todo}
+              autoFocus={true}
+              placeholder="Enter new todo"
+              onKeyUp={handleSubmitForm}
+              onChange={handleTodoChange}
+            />
+            <div className="input-group-append">
+              <button className="btn btn-primary" onClick={handleTodoAdd}>
+                <i className="fas fa-plus-circle"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
     </Wrapper>
 

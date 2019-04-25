@@ -24,7 +24,11 @@ export default function reducer(state, action) {
         ...state,
         invert: !state.invert
       }
-  
+    case "MOVE":
+      return{
+       ...state,
+        coords: action.payload
+      }
     default:
   return state;
 }
